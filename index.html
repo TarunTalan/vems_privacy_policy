@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - VEMS (Vehicle Entry Management System)</title>
-    <meta name="description" content="Privacy Policy for VEMS - Vehicle Entry Management System. Learn how we collect, use, and protect your vehicle registration and entry log data.">
+    <meta name="description" content="VEMS Privacy Policy and Account Deletion Request Portal. Manage your data and account settings.">
+    <title>VEMS - Privacy Policy & Account Deletion Portal</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent-color: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.15);
-            --success-color: #10b981;
+            --bg-dark: #090D16;
+            --bg-panel: #0E1626;
+            --primary: #1E50E5;
+            --primary-glow: rgba(30, 80, 229, 0.15);
+            --border: #1E293B;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --success: #22C55E;
+            --error: #EF4444;
+            --radius-xl: 16px;
+            --radius-lg: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -27,268 +34,600 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.6;
-            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Background blur details */
+        .blur-bg {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(30, 80, 229, 0.08) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            right: -100px;
+            z-index: 0;
+            pointer-events: none;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .logo-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--accent-color), #1d4ed8);
-            border-radius: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 30px var(--accent-glow);
-        }
-
-        .logo-container svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            margin-bottom: 8px;
-            background: linear-gradient(to right, #ffffff, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        .last-updated {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 0.85rem;
-            color: var(--success-color);
-            background: rgba(16, 185, 129, 0.1);
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-weight: 600;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--border);
+            background-color: rgba(14, 22, 38, 0.7);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        section {
-            margin-bottom: 32px;
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        section:last-of-type {
-            margin-bottom: 0;
-        }
-
-        h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 16px;
+        .logo-section {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        h2::before {
-            content: '';
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, #3B82F6 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #FFF 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background-color: #05080F;
+            border: 1px solid var(--border);
+            padding: 4px;
+            border-radius: var(--radius-lg);
+            gap: 4px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-panel {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .content-panel.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 24px 0;
+        }
+
+        /* Privacy Policy styling */
+        .policy-section {
+            margin-bottom: 28px;
+        }
+
+        .policy-section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section h2::before {
+            content: "";
             display: inline-block;
-            width: 4px;
-            height: 20px;
-            background-color: var(--accent-color);
+            width: 6px;
+            height: 16px;
+            background-color: var(--primary);
             border-radius: 2px;
         }
 
-        p {
+        .policy-section p {
             color: var(--text-secondary);
+            font-size: 14.5px;
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .policy-list {
+            list-style: none;
+            padding-left: 8px;
             margin-bottom: 16px;
-            font-size: 0.95rem;
         }
 
-        p strong {
-            color: var(--text-primary);
-        }
-
-        ul {
-            list-style-type: none;
-            margin-bottom: 16px;
-            padding-left: 4px;
-        }
-
-        li {
+        .policy-list li {
             color: var(--text-secondary);
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            font-size: 14px;
+            margin-bottom: 8px;
             position: relative;
-            padding-left: 24px;
+            padding-left: 20px;
         }
 
-        li::before {
-            content: "✓";
+        .policy-list li::before {
+            content: "•";
+            color: var(--primary);
             position: absolute;
-            left: 0;
-            color: var(--accent-color);
+            left: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            top: -2px;
+        }
+
+        /* Form styling */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
             font-weight: 700;
-        }
-
-        .highlight-box {
-            background: rgba(59, 130, 246, 0.05);
-            border-left: 3px solid var(--accent-color);
-            padding: 16px 20px;
-            border-radius: 0 16px 16px 0;
-            margin-bottom: 20px;
-        }
-
-        .highlight-box p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
             color: var(--text-secondary);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
+        input, textarea, select {
+            width: 100%;
+            background-color: rgba(9, 13, 22, 0.6);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 14px 18px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-primary);
+            transition: var(--transition);
         }
 
-        a:hover {
-            color: #60a5fa;
-            text-decoration: underline;
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
         }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         @media (max-width: 600px) {
-            body {
-                padding: 20px 10px;
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
             }
+        }
 
-            .card {
-                padding: 24px 16px;
-                border-radius: 16px;
-            }
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 16px 24px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
 
-            h1 {
-                font-size: 1.8rem;
-            }
+        .submit-btn:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Alert / Callout Boxes */
+        .callout {
+            background-color: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .callout-icon {
+            color: var(--error);
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .callout-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .callout-content p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Success Dialog overlay */
+        .success-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .success-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .success-card {
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .success-overlay.show .success-card {
+            transform: scale(1);
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: rgba(34, 197, 94, 0.1);
+            border: 2px solid var(--success);
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 24px;
+        }
+
+        .success-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .success-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .close-btn {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 10px 24px;
+            border-radius: var(--radius-lg);
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: var(--text-secondary);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            background-color: #05080F;
+            padding: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: auto;
+        }
+
+        /* Spinner for loading state */
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2.5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .submitting .spinner {
+            display: block;
+        }
+        .submitting .btn-text {
+            display: none;
         }
     </style>
 </head>
 <body>
+    <div class="blur-bg"></div>
 
-<div class="container">
     <header>
-        <div class="logo-container" id="logo">
-            <!-- Security / shield car icon -->
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-            </svg>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon">V</div>
+                <div class="logo-text">VEMS PORTAL</div>
+            </div>
+            <div class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab('policy')">Privacy Policy</button>
+                <button class="tab-btn" id="delete-tab-btn" onclick="switchTab('delete')">Delete Account</button>
+            </div>
         </div>
-        <h1>Vehicle Entry Management System</h1>
-        <div class="subtitle">VEMS Privacy Policy</div>
-        <div class="last-updated">Last Updated: August 13, 2026</div>
     </header>
 
-    <main class="card">
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>Welcome to <strong>VEMS (Vehicle Entry Management System)</strong>. We value your privacy and are committed to protecting the personal data of our users, including guards, campus administrators, vehicle owners, and visitors. This Privacy Policy explains how our mobile application collects, uses, processes, and protects your information.</p>
-        </section>
-
-        <section id="information-collection">
-            <h2>Information We Collect</h2>
-            <p>To provide a secure and streamlined vehicle tracking and authorization service, we collect the following categories of data:</p>
-            <ul>
-                <li><strong>User Account Details:</strong> Name, phone number, department, student/employee year (for vehicle owners and guards).</li>
-                <li><strong>Vehicle Information:</strong> License plate/registration number, vehicle make, model, type, and color.</li>
-                <li><strong>Device Camera & OCR Data:</strong> The app utilizes the device camera (used by gate guards) to scan license plates via Google ML Kit Text Recognition. This OCR processing is done entirely on-device; video feeds are never streamed or uploaded to any third-party servers.</li>
-                <li><strong>Entry/Exit Logs:</strong> Timestamps of vehicle entry and exit events, gate identifiers, and verifying guard information.</li>
-            </ul>
-        </section>
-
-        <section id="how-we-use-information">
-            <h2>How We Use Your Information</h2>
-            <p>The collected data is strictly used for the following operational purposes:</p>
-            <ul>
-                <li>To verify and authorize vehicle access to restricted campus gates.</li>
-                <li>To keep a secure, real-time log of vehicles currently present on the premises.</li>
-                <li>To send notification updates regarding vehicle status and entry verification.</li>
-                <li>To allow administrators to audit traffic flow and address security incidents.</li>
-            </ul>
-            <div class="highlight-box">
-                <p><strong>Note:</strong> We do not sell, lease, or distribute your personal or vehicle log data to any third-party advertising companies or marketing networks.</p>
+    <main>
+        <!-- ── PRIVACY POLICY PANEL ───────────────────────────────────── -->
+        <div id="policy-panel" class="content-panel active">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Effective Date: August 14, 2026</p>
+            
+            <div class="policy-section">
+                <h2>1. Information We Collect</h2>
+                <p>We collect information directly from you when you register and set up your profile within the Vehicle Entry Management System (VEMS) application. This includes:</p>
+                <ul class="policy-list">
+                    <li><strong>Personal Details:</strong> First Name, Last Name, Student Number, Department, and academic Year.</li>
+                    <li><strong>Contact Information:</strong> Registered Email address and Mobile Phone Number.</li>
+                    <li><strong>Vehicle Information:</strong> Vehicle Type (2-wheeler/4-wheeler), Model Name, and License Plate Registration Number.</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="data-storage-security">
-            <h2>Data Storage & Security</h2>
-            <p>We implement strict security measures to protect your information from unauthorized access, alteration, or disclosure. All user session tokens and credentials are encrypted and stored securely on-device using <strong>Flutter Secure Storage</strong>. Server-side log data is encrypted in transit using standard HTTPS/TLS protocols.</p>
-        </section>
+            <div class="policy-section">
+                <h2>2. How We Use Your Information</h2>
+                <p>The information collected is used solely to facilitate security checks and control access to the college campus, including:</p>
+                <ul class="policy-list">
+                    <li>Verifying your identity as an authorized campus member (student, staff, or guard).</li>
+                    <li>Generating QR passes or license-plate entry logs at campus gate terminals.</li>
+                    <li>Notifying you of vehicle gate entries or approvals.</li>
+                    <li>Enhancing security and audit trails in case of safety issues inside the campus.</li>
+                </ul>
+            </div>
 
-        <section id="permissions">
-            <h2>Device Permissions Required</h2>
-            <p>The VEMS mobile application requires the following device permissions to operate:</p>
-            <ul>
-                <li><strong>Camera:</strong> Required exclusively for the License Plate Scanning module to run Optical Character Recognition (OCR) locally.</li>
-                <li><strong>Storage:</strong> Required if uploading registration files, vehicle images, or RC documents.</li>
-            </ul>
-        </section>
+            <div class="policy-section">
+                <h2>3. Data Storage & Security</h2>
+                <p>All sensitive information, authentication tokens, and user credentials are encrypted and stored locally in protected keychain directories on your mobile device (using secure storage) and secure cloud databases. We employ strict access controls to ensure that only authorized guard gates can verify your vehicle status.</p>
+            </div>
 
-        <section id="policy-changes">
-            <h2>Changes to This Policy</h2>
-            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy page here. You are advised to review this page periodically for any updates.</p>
-        </section>
+            <div class="policy-section">
+                <h2>4. Your Rights & Deletion Request</h2>
+                <p>Under Google Play and privacy guidelines, you have absolute control over your personal data. You can delete your account and request complete wipe of your logs directly from the Profile tab in the VEMS application, or online using our <strong>Delete Account</strong> tab above.</p>
+            </div>
+        </div>
 
-        <section id="contact-us">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback regarding this Privacy Policy, please contact the system administration team at:</p>
-            <p><strong>Email:</strong> <a href="mailto:support@sdcsi.com" id="support-email">support@sdcsi.com</a></p>
-        </section>
+        <!-- ── DELETE ACCOUNT REQUEST PANEL ───────────────────────────── -->
+        <div id="delete-panel" class="content-panel">
+            <h1>Delete Account & User Data</h1>
+            <p class="subtitle">Submit a request to permanently delete your VEMS account and remove all personal information.</p>
+
+            <div class="callout">
+                <span class="callout-icon">⚠️</span>
+                <div class="callout-content">
+                    <h4>Permanent Action</h4>
+                    <p>This action is irreversible. Deleting your account will permanently wipe your profile details, registered vehicles, campus entry logs, and authorization credentials from VEMS systems.</p>
+                </div>
+            </div>
+
+            <form id="deletion-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required placeholder="Enter your registered full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentNumber">Student / Employee ID</label>
+                        <input type="text" id="studentNumber" required placeholder="e.g. 1234567A">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Registered Email</label>
+                        <input type="email" id="email" required placeholder="name@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (10 digits)</label>
+                        <input type="tel" id="phone" pattern="[0-9]{10}" required placeholder="9876543210">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Deletion (Optional)</label>
+                    <textarea id="reason" rows="3" placeholder="Tell us why you want to delete your account..."></textarea>
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 10px; align-items: flex-start; margin-top: 10px;">
+                    <input type="checkbox" id="confirmCheckbox" required style="width: auto; margin-top: 5px; cursor: pointer;">
+                    <label for="confirmCheckbox" style="text-transform: none; font-size: 13px; font-weight: 500; cursor: pointer;">
+                        I understand that my VEMS account profile, active vehicle passes, and historical logs will be permanently deleted.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Deletion Request</span>
+                    <span class="spinner"></span>
+                </button>
+            </form>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 SDCSI. All rights reserved.</p>
-    </footer>
-</div>
+    <!-- Success overlay modal -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-card">
+            <div class="success-icon">✓</div>
+            <h3>Request Submitted Successfully</h3>
+            <p>Your request to delete account data has been logged. We will verify your credentials and wipe all associated records from our servers within 3 business days.</p>
+            <button class="close-btn" onclick="hideSuccessModal()">Close</button>
+        </div>
+    </div>
 
+    <footer>
+        &copy; 2026 VEMS (Vehicle Entry Management System). All rights reserved.
+    </footer>
+
+    <script>
+        // Tab switching logic
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.content-panel').forEach(panel => panel.classList.remove('active'));
+
+            if (tab === 'policy') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('policy-panel').classList.add('active');
+            } else {
+                document.getElementById('delete-tab-btn').classList.add('active');
+                document.getElementById('delete-panel').classList.add('active');
+            }
+        }
+
+        // Form submission animation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.classList.add('submitting');
+            btn.disabled = true;
+
+            // Simulate server network request delay
+            setTimeout(() => {
+                btn.classList.remove('submitting');
+                btn.disabled = false;
+                
+                // Show success modal
+                document.getElementById('successOverlay').classList.add('show');
+                document.getElementById('deletion-form').reset();
+            }, 1800);
+        }
+
+        // Deep link redirection or navigation
+        function hideSuccessModal() {
+            document.getElementById('successOverlay').classList.remove('show');
+            switchTab('policy'); // Return to privacy policy after close
+        }
+
+        // Parse query parameter to open delete tab directly if requested
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('delete') === 'true') {
+                switchTab('delete');
+            }
+        });
+    </script>
 </body>
 </html>
