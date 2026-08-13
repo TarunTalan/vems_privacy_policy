@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VEMS (Vehicle Entry Management System)</title>
+    <meta name="description" content="Privacy Policy for VEMS - Vehicle Entry Management System. Learn how we collect, use, and protect your vehicle registration and entry log data.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --success-color: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-color), #1d4ed8);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        .logo-container svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--success-color);
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-weight: 600;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        p strong {
+            color: var(--text-primary);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+
+        li {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.05);
+            border-left: 3px solid var(--accent-color);
+            padding: 16px 20px;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .card {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-container" id="logo">
+            <!-- Security / shield car icon -->
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+        </div>
+        <h1>Vehicle Entry Management System</h1>
+        <div class="subtitle">VEMS Privacy Policy</div>
+        <div class="last-updated">Last Updated: August 13, 2026</div>
+    </header>
+
+    <main class="card">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to <strong>VEMS (Vehicle Entry Management System)</strong>. We value your privacy and are committed to protecting the personal data of our users, including guards, campus administrators, vehicle owners, and visitors. This Privacy Policy explains how our mobile application collects, uses, processes, and protects your information.</p>
+        </section>
+
+        <section id="information-collection">
+            <h2>Information We Collect</h2>
+            <p>To provide a secure and streamlined vehicle tracking and authorization service, we collect the following categories of data:</p>
+            <ul>
+                <li><strong>User Account Details:</strong> Name, phone number, department, student/employee year (for vehicle owners and guards).</li>
+                <li><strong>Vehicle Information:</strong> License plate/registration number, vehicle make, model, type, and color.</li>
+                <li><strong>Device Camera & OCR Data:</strong> The app utilizes the device camera (used by gate guards) to scan license plates via Google ML Kit Text Recognition. This OCR processing is done entirely on-device; video feeds are never streamed or uploaded to any third-party servers.</li>
+                <li><strong>Entry/Exit Logs:</strong> Timestamps of vehicle entry and exit events, gate identifiers, and verifying guard information.</li>
+            </ul>
+        </section>
+
+        <section id="how-we-use-information">
+            <h2>How We Use Your Information</h2>
+            <p>The collected data is strictly used for the following operational purposes:</p>
+            <ul>
+                <li>To verify and authorize vehicle access to restricted campus gates.</li>
+                <li>To keep a secure, real-time log of vehicles currently present on the premises.</li>
+                <li>To send notification updates regarding vehicle status and entry verification.</li>
+                <li>To allow administrators to audit traffic flow and address security incidents.</li>
+            </ul>
+            <div class="highlight-box">
+                <p><strong>Note:</strong> We do not sell, lease, or distribute your personal or vehicle log data to any third-party advertising companies or marketing networks.</p>
+            </div>
+        </section>
+
+        <section id="data-storage-security">
+            <h2>Data Storage & Security</h2>
+            <p>We implement strict security measures to protect your information from unauthorized access, alteration, or disclosure. All user session tokens and credentials are encrypted and stored securely on-device using <strong>Flutter Secure Storage</strong>. Server-side log data is encrypted in transit using standard HTTPS/TLS protocols.</p>
+        </section>
+
+        <section id="permissions">
+            <h2>Device Permissions Required</h2>
+            <p>The VEMS mobile application requires the following device permissions to operate:</p>
+            <ul>
+                <li><strong>Camera:</strong> Required exclusively for the License Plate Scanning module to run Optical Character Recognition (OCR) locally.</li>
+                <li><strong>Storage:</strong> Required if uploading registration files, vehicle images, or RC documents.</li>
+            </ul>
+        </section>
+
+        <section id="policy-changes">
+            <h2>Changes to This Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy page here. You are advised to review this page periodically for any updates.</p>
+        </section>
+
+        <section id="contact-us">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or feedback regarding this Privacy Policy, please contact the system administration team at:</p>
+            <p><strong>Email:</strong> <a href="mailto:support@sdcsi.com" id="support-email">support@sdcsi.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SDCSI. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
